@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperHero</title>
+</head>
+<body>
+    <h1>
+        Fiche d'inscription de SuperHero
+    </h1>
+    
+    <form method="post" action="/AjouteSuperHero">
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" value="">
+
+        <label for="numeroTel">N° Téléphone</label>
+        <input type="text" name="numeroTel" id="numeroTel" value="">
+
+        <label for="ville">Ville</label>
+        <input type="text" name="ville" id="ville" value="">
+
+        <label for="longitude">Longitude</label>
+        <input type="text" name="longitude" id="longitude" value="">
+
+        <label for="latitude">Latitude</label>
+        <input type="text" name="latitude" id="latitude" value="">
+
+        <label for="logIn">LogIn</label>
+        <input type="text" name="logIn" id="logIn" value="">
+
+        <label for="motDePasse">Mot de passe</label>
+        <input type="text" name="motDePasse" id="motDePasse" value="">
+
+        <input type="submit" value="Créer">
+    </form>
+    <h2>Capacités à résoudre des incidents:</h2>
+    <ul >
+        <li th:each="TypeIncident: ${typeIncident}" th:text="${typeIncident.name}"> Votre capacité à résoudre cet incident: </li>
+    </ul>
+</body>
+</html>
