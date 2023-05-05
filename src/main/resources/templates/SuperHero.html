@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,9 +35,10 @@
 
         <input type="submit" value="Créer">
     </form>
+    
     <h2>Capacités à résoudre des incidents:</h2>
-    <ul >
-        <li th:each="TypeIncident: ${typeIncident}" th:text="${typeIncident.name}"> Votre capacité à résoudre cet incident: </li>
+    <ul>
+        <li th:each="typeIncident : ${typeIncidents}" th:text="${typeIncident.nom}"> Votre capacité à résoudre cet incident </li>
     </ul>
 </body>
 </html>

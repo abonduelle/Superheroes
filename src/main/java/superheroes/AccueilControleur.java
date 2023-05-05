@@ -21,20 +21,16 @@ public class AccueilControleur {
         return "Accueil";// ici le return est comme un redirect http
     }
 
-    @GetMapping("/SuperHero")
-    public String SuperHero(){
-        return "SuperHero";
-    }
+    //@GetMapping("/SuperHero")
+    //public String SuperHero(){
+     //   return "SuperHero";
+    //}
 
-    @GetMapping("/ListeIncident")
-        String displayTypeIncidents (Model model) {
+    @GetMapping("/SuperHero")
+        String displayTypeIncidents2 (Model model) {
         List<TypeIncident> typeIncidents = repository2.findAll();
         model.addAttribute("typeIncidents", typeIncidents);
-        return "ListeIncident";
-
-    //public List<TypeIncident> typeIncident(String nom){
-           //System.out.println(this.repository2.findAll());
-            //return this.repository2.findAll();
+        return "SuperHero";
         }
         
     @GetMapping("/Incident")
@@ -55,8 +51,15 @@ public class AccueilControleur {
         superHero.setLogIn(logIn);
         superHero.setMotDePasse(motDePasse);
         repository.save(superHero);
-        return "Accueil";
-    }
+        return "AjouteSuperHero";
+        }
+
+    //@GetMapping("/SuperHero")
+    //String displayTypeIncidents (Model model) {
+    //    List<TypeIncident> typeIncidents = repository2.findAll();
+     //   model.addAttribute("typeIncidents", typeIncidents);
+    //    return "SuperHero";
+    //}
 
 
 }
