@@ -38,33 +38,48 @@
     
     <h2>Capacités à résoudre des incidents</h2>
     <h3>Veuillez renseigner entre trois et six compétences parmi la liste ci dessous.</h3>
-    <h3>Pour les renseigner, estimez votre capacité à résoudre ces incidents et cochez le niveau correspondant:</h3>
+    <h3>Sélectionnez les incidents, estimez votre capacité à les résoudre et cochez le niveau correspondant:</h3>
     <h3>Niveau 1: Maîtrise moyenne     Niveau 2: Bonne Maîtrise     Niveau 3: Forte Maîtrise</h3>
     
-    <table>
-        <thead>
-            <tr>
-                <th text="Type d'Incident">Incident</th>
-                <th text="Sélection">Selection</th>
-                <th text="Niveau">Niveau</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr th:each="typeIncident : ${typeIncidents}">
-                <td th:text="${typeIncident.nom}"></td>
-                <td text="case a cocher"></td>
-                <td>
-                    <div>
-                        <input type="radio" id="1" name="niveau" value="1">
-                        <label for="1">Maîtrise moyenne</label>
-                        <input type="radio" id="2" name="niveau" value="2">
-                        <label for="2">Bonne Maîtrise</label>
-                        <input type="radio" id="3" name="niveau" value="3">
-                        <label for="3">Forte Maîtrise</label>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
+    <form>
+        <table>
+            <thead>
+                <tr>
+                    <th text="Type d'Incident">Incident</th>
+                    <th text="Sélection">Selection</th>
+                    <th text="Niveau">Niveau</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="typeIncident : ${typeIncidents}">
+                    <td th:text="${typeIncident.nom}"></td>
+                    <td>
+                        <div>
+                            <input type="checkbox" id="selection" name="${typeIncident.nom}.selection">
+                        </div>
+                    </td>
+                    <td>
+                        <div>
+                            <input type="radio" id="niveau1" th:name="${typeIncident.nom}" value="1">
+                            <label for="niveau1">Maîtrise Moyenne</label>
+                            <input type="radio" id="niveau2" th:name="${typeIncident.nom}" value="2">
+                            <label for="niveau2">Bonne Maîtrise</label>
+                            <input type="radio" id="niveau3" th:name="${typeIncident.nom}" value="3">
+                            <label for="niveau3">Forte Maîtrise</label>
+                            
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
         </table>
+        <div>
+            <button type="reset">
+               <strong>Reset</strong>
+            </button> 
+        </div>
+        <div>         
+            <input type="submit" value="Envoyer">
+        </div>
+    </form>
 </body>
 </html>

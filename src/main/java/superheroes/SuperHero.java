@@ -1,10 +1,15 @@
 package superheroes;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
@@ -85,5 +90,24 @@ public class SuperHero {
     }
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
+    }
+    @OneToMany(mappedBy = "superHero")
+    //@Min(3)
+    //@Max(6)
+    List<SuperHeroTypeIncident> SuperHeroTypeIncident;
+
+
+    public SuperHero(Long id, @NotNull @NotBlank String nom, @NotNull @NotBlank String ville, @NotNull int longitude,
+            @NotNull int latitude, @NotNull @NotBlank String numeroTel, @NotNull @NotBlank String logIn,
+            @NotNull @NotBlank String motDePasse, List<superheroes.SuperHeroTypeIncident> superHeroTypeIncident) {
+        this.id = id;
+        this.nom = nom;
+        this.ville = ville;
+        this.longitude = longitude;
+        this.latitude = latitude;
+        this.numeroTel = numeroTel;
+        this.logIn = logIn;
+        this.motDePasse = motDePasse;
+        SuperHeroTypeIncident = superHeroTypeIncident;
     }
 }
