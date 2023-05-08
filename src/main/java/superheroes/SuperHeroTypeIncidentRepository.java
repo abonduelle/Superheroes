@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SuperHeroTypeIncidentRepository extends JpaRepository<SuperHeroTypeIncident, Long>{
-    List<SuperHeroTypeIncident> findSuperHeroTypeIncidentById (Long id);
+    List<SuperHeroTypeIncident> findSuperHeroTypeIncidentBySuperHeroId (Long superHero);
     SuperHeroTypeIncidentRepository save(Long id);
 }
