@@ -26,7 +26,7 @@ public class SuperHeroControleur {
     String AjouteSuperHero(String nom, String ville, String numeroTel, int longitude, int latitude,
         String logIn, String motDePasse,  Model model) {
         System.out.println(nom + numeroTel + ville + longitude + latitude + logIn + motDePasse);
-        SuperHero superHero = new SuperHero();
+        SuperHero superHero = new SuperHero(null, motDePasse, motDePasse, latitude, latitude, motDePasse, motDePasse, motDePasse, null);
         superHero.setNom(nom);
         superHero.setVille(ville);
         superHero.setNumeroTel(numeroTel);

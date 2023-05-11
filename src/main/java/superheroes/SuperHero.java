@@ -40,11 +40,6 @@ public class SuperHero {
     @Column @NotNull @NotBlank
     private String motDePasse;
 
-    
-    //constructeur
-    public SuperHero() {
-        
-    }
     public String getNom() {
         return nom;
     }
@@ -109,5 +104,8 @@ public class SuperHero {
         this.logIn = logIn;
         this.motDePasse = motDePasse;
         SuperHeroTypeIncident = superHeroTypeIncident;
+    }
+    public SuperHero(){
+        
     }
 }

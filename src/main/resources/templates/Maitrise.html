@@ -11,7 +11,7 @@
        Capacités du SuperHéro
     </h1>
     <p>Nom du SuperHéro: </p>
-    <!--p th:text="${superHero.nom}"></p-->
+    <p th:text="${superHero.nom}"></p>
     <div>
         <table>
             <thead>
@@ -23,7 +23,7 @@
             <tbody>
                 <tr th:each="typeIncident : ${typeIncidents}">
                     <td th:text="${typeIncident.nom}"></td>
-                    <!--td th:text="${superHeroTypeIncident.niveau}"></td-->
+                    <!--td> th:text="${superHeroTypeIncident.niveau}"></td-->
                 </tr>
             </tbody>
         </table>       
