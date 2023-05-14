@@ -35,7 +35,7 @@ public class SuperHeroControleur {
         superHero.setLogIn(logIn);
         superHero.setMotDePasse(motDePasse);
         repository.save(superHero);
-        return "AjouteSuperHero";
+        return "SuperHero";
         }
         
 
