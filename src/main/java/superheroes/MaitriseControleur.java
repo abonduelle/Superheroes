@@ -27,9 +27,9 @@ public class MaitriseControleur {
         SuperHero superHero = repository.findById(4);
         model.addAttribute("superHero", superHero);
         System.out.println(superHero.getNom());
-        List<TypeIncident> typeIncidents = repository2.findAll();
-        model.addAttribute("typeIncidents", typeIncidents);
-        System.out.println(typeIncidents);
+        Iterable<SuperHeroTypeIncident> superHeroTypeIncident  = repository3.findBySuperHeroId(4);
+        model.addAttribute("superHeroTypeIncident", superHeroTypeIncident);
+        System.out.println(((SuperHeroTypeIncident) superHeroTypeIncident).getNiveau());
         return "Maitrise";
     }
     //void displaySuperHero (Model model) {

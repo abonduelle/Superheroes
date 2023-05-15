@@ -21,9 +21,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="typeIncident : ${typeIncidents}">
-                    <td th:text="${typeIncident.nom}"></td>
-                    <!--td> th:text="${superHeroTypeIncident.niveau}"></td-->
+                <tr th:each="superHeroTypeIncident : ${superHeroTypeIncident}">
+                    <td th:text="${superHeroTypeIncident.typeIncident.nom}"></td>
+                    <td th:text="${superHeroTypeIncident.niveau}"></td>
                 </tr>
             </tbody>
         </table>       

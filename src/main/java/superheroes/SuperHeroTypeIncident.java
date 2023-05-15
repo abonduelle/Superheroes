@@ -33,11 +33,15 @@ public class SuperHeroTypeIncident{
 
     @ManyToOne
     TypeIncident typeIncident;
+
+    public SuperHeroTypeIncident(){
+        
+    }
     
-    public int getLevel() {
+    public int getNiveau() {
         return niveau;
     }
-    public void setLevel(int niveau) {
+    public void setNiveau(int niveau) {
         this.niveau = niveau;
     }
 }
